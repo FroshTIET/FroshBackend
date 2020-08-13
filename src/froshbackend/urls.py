@@ -2,11 +2,12 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-
+from landingPage.views import homeView
 
 urlpatterns = [
+    path("", include("landingPage.urls")),
     path("admin/", admin.site.urls),  # The admin route
-    path("", include("user_management.urls")),
+    path("api/", include("user_management.urls")),
     path("api-auth/", include("rest_framework.urls")),
 ]
 

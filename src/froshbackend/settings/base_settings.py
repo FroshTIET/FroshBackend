@@ -18,6 +18,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.sites",
     "user_management.apps.UserManagementConfig",
+    "landingPage.apps.LandingpageConfig",
     "rest_framework",
     "rest_framework.authtoken",
 ]
