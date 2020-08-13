@@ -445,6 +445,9 @@ html, body{
     .evework, .starter{
         padding: 20px 50px;
     }
+    .anim-typewriter{
+        line-height: 35px;
+    }    
 }
 
 
