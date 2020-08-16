@@ -17,6 +17,7 @@ html, body{
     z-index: -2;
     position: fixed;
     overflow: hidden;
+    width: 100vw;
 }
 @font-face{
     font-family: 'Born-Losers';
@@ -456,6 +457,13 @@ html, body{
     }
     .anim-typewriter{
         line-height: 35px;
+    }
+    #videoBG{
+        z-index: -2;
+        position: fixed;
+        overflow: hidden;
+        width: auto;
+        height: 100vh;
     }
 }
 
