@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Template</title>
+</head>
+
+<body> {% if messages %}
+    {% for message in messages %}
+
+    <div class="text" style="color: red;">{{ message }}</div> 
+
+    {% endfor %}
+
+    {% endif %}
+    <form action="" method="post">
+        {% csrf_token %}
+        Question : {{ question.question_text }}
+        <br>
+        Answer : <input type="text" name="answer" \>
+        <br>
+        <button type="submit"> Submit </button>
+    </form>
+</body>
+
+</html>
