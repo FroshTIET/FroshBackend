@@ -21,6 +21,10 @@ INSTALLED_APPS = [
     "landingPage.apps.LandingpageConfig",
     "rest_framework",
     "rest_framework.authtoken",
+    "whodunit",
+    "crispy_forms",
+    "leaderboard"
+
 ]
 
 MIDDLEWARE = [
