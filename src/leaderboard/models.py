@@ -6,9 +6,9 @@ from django.contrib.auth.models import User
 
 class Score(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="score")
-    whodunit_score_1 = models.IntegerField(default=0)
-    whodunit_score_2 = models.IntegerField(default=0)
-    whodunit_score_3 = models.IntegerField(default=0)
+    wh_score_space = models.IntegerField(default=0)
+    wh_score_murder = models.IntegerField(default=0)
+    wh_score_vexed = models.IntegerField(default=0)
 
     game_of_wits_score = models.IntegerField(default=0)
     total_score = models.IntegerField(default=0)
@@ -38,9 +38,9 @@ class Score(models.Model):
 
     def save(self, *args, **kwargs):
         self.total_score = (
-            self.whodunit_score_1
-            + self.whodunit_score_2
-            + self.whodunit_score_3
+            self.wh_score_space
+            + self.wh_score_murder
+            + self.wh_score_vexed
             + self.game_of_wits_score
         )
         super(Score, self).save(*args, **kwargs)

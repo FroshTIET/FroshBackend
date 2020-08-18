@@ -40,3 +40,10 @@ class Question(models.Model):
     def switch_state(self):
         self.active = not self.active
 
+    def getScoreandUpdate(self):
+        currentScore = self.current_points
+        if self.current_points > self.minimum_points:
+            self.current_points -= self.point_decrement
+            self.save()
+        return currentScore
+    
