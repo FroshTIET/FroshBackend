@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     "landingPage.apps.LandingpageConfig",
     "rest_framework",
     "rest_framework.authtoken",
+    "notifications.apps.NotificationsConfig"
 ]
 
 MIDDLEWARE = [
@@ -105,5 +106,10 @@ REST_FRAMEWORK = {
         "rest_framework.authentication.TokenAuthentication",
         "rest_framework.authentication.BasicAuthentication",
         "rest_framework.authentication.SessionAuthentication",
-    ]
+    ],
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10,
+    'DATETIME_FORMAT': '%s', 
 }
+
+FCM_KEY = config('FCM_KEY')

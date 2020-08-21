@@ -9,6 +9,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),  # The admin route
     path("api/", include("user_management.urls")),
     path("api-auth/", include("rest_framework.urls")),
+    path("notifications/", include("notifications.urls")),
 ]
 
 
