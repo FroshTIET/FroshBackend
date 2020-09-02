@@ -3,13 +3,14 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from landingPage.views import homeView
-
+from rest_framework.authtoken import views
 urlpatterns = [
     path("", include("landingPage.urls")),
     path("admin/", admin.site.urls),  # The admin route
     path("api/", include("user_management.urls")),
     path("api-auth/", include("rest_framework.urls")),
-    path("notifications/", include("notifications.urls")),
+    path("app/", include("notifications.urls")),
+    path('api-token-auth/', views.obtain_auth_token),  
 ]
 
 
