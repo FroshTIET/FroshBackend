@@ -56,6 +56,6 @@ class Student(models.Model):
     )
     phone_number = models.CharField(validators=[phone_regex], max_length=17, blank=True)
     whatsapp_link = models.CharField(max_length=1024, default="", blank=True, null=True)
-    
+    profile_pic = models.ImageField(null=True, blank=True, upload_to='profile_pics' )
     def __str__(self):
         return self.user.username
