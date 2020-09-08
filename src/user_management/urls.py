@@ -1,4 +1,5 @@
-from django.urls import path, include
+from django.contrib.messages import api
+from django.urls import path
 from rest_framework.authtoken.views import *
 
 from user_management.views import (
@@ -6,7 +7,7 @@ from user_management.views import (
     MyDetailsView,
     StudentDetailView,
     StudentListView,
-    api_root,
+    api_root, setFireBaseToken,
 )
 
 urlpatterns = [
@@ -16,4 +17,5 @@ urlpatterns = [
     path("student/<uuid:pk>/", StudentDetailView.as_view(), name="student-details"),
     path("student/detail/", MyDetailsView.as_view(), name="my-details"),
     path("leaderboard/", LeaderBoard.as_view(), name="leaderboard"),
+    path("pushToken/", setFireBaseToken.as_view(), name="set-token")
 ]

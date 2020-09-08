@@ -4,8 +4,9 @@ from notifications.serializers import (
     FeaturedEventSerializer,
     NotificationSerializer,
     TimelineEventSerializer,
+    TourEventSerializer,
 )
-from notifications.models import FeaturedEvent, Notification, TimeLineEvent
+from notifications.models import FeaturedEvent, Notification, TimeLineEvent, TourPicture
 
 # Create your views here.
 
@@ -20,6 +21,10 @@ class FeaturedEventListView(generics.ListAPIView):
     serializer_class = FeaturedEventSerializer
     pagination_class = None
 
+class TourEventListView(generics.ListAPIView):
+    queryset = TourPicture.objects.all()
+    serializer_class = TourEventSerializer
+    pagination_class = None
 
 class TimelineEventListView(generics.ListAPIView):
     queryset = TimeLineEvent.objects.all().order_by("priority")

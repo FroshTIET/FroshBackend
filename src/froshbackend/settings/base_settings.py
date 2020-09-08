@@ -21,7 +21,7 @@ INSTALLED_APPS = [
     "landingPage.apps.LandingpageConfig",
     "rest_framework",
     "rest_framework.authtoken",
-    "notifications.apps.NotificationsConfig"
+    "notifications.apps.NotificationsConfig",
 ]
 
 MIDDLEWARE = [
@@ -64,6 +64,7 @@ AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",},
 ]
 
+CACHES = {"default": {"BACKEND": "django.core.cache.backends.locmem.LocMemCache",}}
 LANGUAGE_CODE = "en-us"
 
 TIME_ZONE = "Asia/Kolkata"
@@ -107,9 +108,15 @@ REST_FRAMEWORK = {
         "rest_framework.authentication.BasicAuthentication",
         "rest_framework.authentication.SessionAuthentication",
     ],
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10,
-    'DATETIME_FORMAT': '%s', 
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
+    "PAGE_SIZE": 10,
+    "DATETIME_FORMAT": "%s",
+    "DEFAULT_THROTTLE_CLASSES": [
+        "rest_framework.throttling.AnonRateThrottle",
+        "rest_framework.throttling.UserRateThrottle",
+    ],
+    "DEFAULT_THROTTLE_RATES": {"anon": "2/day", "user": "1000/day"},
 }
 
-FCM_KEY = config('FCM_KEY')
+FCM_KEY = config("FCM_KEY")
+

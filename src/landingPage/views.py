@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from landingPage.models import ContactFormEntry
 
+
 def homeView(request):
     if request.method == "POST":
         name = request.POST.get("name", "")
@@ -8,7 +9,8 @@ def homeView(request):
         message = request.POST.get("message", "")
         email = request.POST.get("email", "")
 
-        ContactFormEntry.objects.create(name=name, subject=subject, message=message, email=email)
-    
-    return render(request, "landingPage/index.html", {})
+        ContactFormEntry.objects.create(
+            name=name, subject=subject, message=message, email=email
+        )
 
+    return render(request, "landingPage/index.html", {})

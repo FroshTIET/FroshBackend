@@ -6,7 +6,7 @@ from rest_framework.authentication import (
     BasicAuthentication,
 )
 from rest_framework.permissions import IsAuthenticated
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, authentication_classes
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.reverse import reverse
@@ -92,3 +92,26 @@ class LeaderBoard(generics.ListAPIView):
     queryset = Student.objects.all().order_by("-points")
     serializer_class = ScoreBoardSerializer
     pagination_class = GenericFroshPaginator
+
+
+class setFireBaseToken(APIView):
+    authentication_classes = [
+        TokenAuthentication,
+        SessionAuthentication,
+        BasicAuthentication,
+    ]
+    permission_classes = [IsAuthenticated]    
+
+
+    def post(self, request, format=None):
+        
+        try:
+            firebase_token = request.data['token']
+            request.user.profile.firebase_token = firebase_token
+            request.user.profile.save()
+        except KeyError:
+            return Response(status=400,)
+    
+        content = {'status': 'ok'}
+        return Response(content)
+                        

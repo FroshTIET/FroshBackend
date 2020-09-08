@@ -6,21 +6,35 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('notifications', '0002_featuredevent'),
+        ("notifications", "0002_featuredevent"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='TimeLineEvent',
+            name="TimeLineEvent",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=500)),
-                ('date', models.CharField(blank=True, max_length=255, null=True)),
-                ('event_type', models.CharField(choices=[('checkpoint', 'checkpoint'), ('line', 'line')], max_length=255)),
-                ('duration', models.IntegerField(default=8)),
-                ('color', models.CharField(default='0xFF40C752', max_length=128)),
-                ('icon', models.CharField(blank=True, max_length=255, null=True)),
-                ('priority', models.IntegerField(default=0, unique=True)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(max_length=500)),
+                ("date", models.CharField(blank=True, max_length=255, null=True)),
+                (
+                    "event_type",
+                    models.CharField(
+                        choices=[("checkpoint", "checkpoint"), ("line", "line")],
+                        max_length=255,
+                    ),
+                ),
+                ("duration", models.IntegerField(default=8)),
+                ("color", models.CharField(default="0xFF40C752", max_length=128)),
+                ("icon", models.CharField(blank=True, max_length=255, null=True)),
+                ("priority", models.IntegerField(default=0, unique=True)),
             ],
         ),
     ]

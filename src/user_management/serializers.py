@@ -25,7 +25,7 @@ class StudentSerializer(serializers.ModelSerializer):
             "points",
             "phone_number",
             "whatsapp_link",
-            "profile_pic"
+            "profile_pic",
         )
 
 

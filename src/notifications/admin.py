@@ -1,5 +1,5 @@
 from django.contrib import admin
-from notifications.models import Notification, FeaturedEvent, TimeLineEvent
+from notifications.models import Notification, FeaturedEvent, TimeLineEvent, TourPicture
 from django.contrib import messages
 
 # Register your models here.
@@ -53,6 +53,12 @@ class FeaturedAdmin(admin.ModelAdmin):
     search_fields = ["title", "image_link", "redirect_url"]
     list_display = ["title", "image_link", "redirect_url"]
 
+@admin.register(TourPicture)
+class TourAdmin(admin.ModelAdmin):
+    search_fields = ["title", "image_link", ]
+    list_display = ["title", "image_link", ]
+
+
 
 @admin.register(TimeLineEvent)
 class TimelineAdmin(admin.ModelAdmin):
@@ -66,4 +72,6 @@ class TimelineAdmin(admin.ModelAdmin):
         "icon",
         "priority",
     ]
-    list_filter = ['event_type',]
+    list_filter = [
+        "event_type",
+    ]

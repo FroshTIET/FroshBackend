@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('user_management', '0002_student_whatsapp_link'),
+        ("user_management", "0002_student_whatsapp_link"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='student',
-            name='profile_pic',
-            field=models.ImageField(blank=True, null=True, upload_to=''),
+            model_name="student",
+            name="profile_pic",
+            field=models.ImageField(blank=True, null=True, upload_to=""),
         ),
     ]

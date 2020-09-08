@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('notifications', '0003_timelineevent'),
+        ("notifications", "0003_timelineevent"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='timelineevent',
-            name='icon',
+            model_name="timelineevent",
+            name="icon",
             field=models.IntegerField(blank=True, null=True),
         ),
     ]

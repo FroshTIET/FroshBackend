@@ -60,6 +60,14 @@ class FeaturedEvent(models.Model):
         return self.title
 
 
+class TourPicture(models.Model):
+    title = models.CharField(max_length=255)
+    image_link = models.TextField()
+
+    def __str__(self):
+        return self.title
+
+
 class TimeLineEvent(models.Model):
     title = models.CharField(max_length=500)
     date = models.CharField(max_length=255, blank=True, null=True)
@@ -68,7 +76,6 @@ class TimeLineEvent(models.Model):
     color = models.CharField(default="0xFF40C752", max_length=128)
     icon = models.IntegerField(blank=True, null=True)
     priority = models.IntegerField(default=0, unique=True)
+
     def __str__(self):
         return self.title
-        
-    
