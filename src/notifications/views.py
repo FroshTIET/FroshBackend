@@ -14,7 +14,7 @@ from notifications.models import FeaturedEvent, Notification, TimeLineEvent, Tou
 class NotificationListView(generics.ListAPIView):
     queryset = Notification.objects.all().order_by("-event_date")
     serializer_class = NotificationSerializer
-
+    pagination_class = None
 
 class FeaturedEventListView(generics.ListAPIView):
     queryset = FeaturedEvent.objects.all()
