@@ -14,3 +14,9 @@ def homeView(request):
         )
 
     return render(request, "landingPage/index.html", {})
+
+def dosa_page(request):
+    return render('landingPage/dosamaam.html')
+
+def director_page(request):
+    return render('landingPage/directorsir.html')
