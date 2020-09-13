@@ -8,7 +8,7 @@ from rest_framework.authtoken import views
 urlpatterns = [
     path("", include("landingPage.urls")),
     path("admin/", admin.site.urls),  # The admin route
-    path("api/", include("user_management.urls")),
+    path("", include("user_management.urls")),
     path("api-auth/", include("rest_framework.urls")),
     path("app/", include("notifications.urls")),
     path("api-token-auth/", views.obtain_auth_token),

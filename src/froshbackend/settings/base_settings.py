@@ -11,7 +11,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 
 INSTALLED_APPS = [
     "django.contrib.admin",
-    "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
@@ -22,6 +21,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "rest_framework.authtoken",
     "notifications.apps.NotificationsConfig",
+    "django.contrib.auth",
 ]
 
 MIDDLEWARE = [
@@ -39,7 +39,7 @@ ROOT_URLCONF = "froshbackend.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [os.path.join(BASE_DIR, 'templates')],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -111,8 +111,10 @@ REST_FRAMEWORK = {
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
     "PAGE_SIZE": 10,
     "DATETIME_FORMAT": "%s",
-
 }
 
 FCM_KEY = config("FCM_KEY")
+
+LOGIN_URL = "/login/"
+LOGIN_REDIRECT_URL = "/"
 

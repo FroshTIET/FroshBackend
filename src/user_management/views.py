@@ -1,4 +1,6 @@
+from django.contrib.auth import authenticate, login
 from django.http.response import Http404
+from django.shortcuts import redirect
 
 from rest_framework.authentication import (
     SessionAuthentication,
