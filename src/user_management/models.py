@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import RegexValidator
 import uuid
+import datetime
+
 
 # Create your models here.
 
@@ -41,22 +43,26 @@ GENDER = [
 class Student(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="profile")
-    rollNumber = models.CharField(max_length=100, default="")
+    rollNumber = models.CharField(max_length=100, default="TIET-O-******")
     fullName = models.CharField(max_length=150, default="")
     branch = models.CharField(
         max_length=150, choices=BRANCH_CHOICES, default="Not Applicable"
     )
     gender = models.CharField(choices=GENDER, default="NIL", max_length=100)
-    birthday = models.DateField(blank=True, null=True)
+    birthday = models.DateField(
+        blank=True, null=True, default=datetime.datetime(year=2020, month=9, day=14)
+    )
     points = models.IntegerField(default=0)
 
     phone_regex = RegexValidator(
         regex=r"^\+?1?\d{9,15}$",
         message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.",
+        
     )
-    phone_number = models.CharField(validators=[phone_regex], max_length=17, blank=True)
-    whatsapp_link = models.CharField(max_length=1024, default="", blank=True, null=True)
-    profile_pic = models.ImageField(null=True, blank=True, upload_to="profile_pics")
-    firebase_token=models.TextField(null=True, blank=True)
+    phone_number = models.CharField(validators=[phone_regex], max_length=17, blank=True, default="9872466977")
+    whatsapp_link = models.CharField(max_length=1024, default="https://froshtiet.com/coming-soon/", blank=True, null=True)
+    profile_pic = models.ImageField(null=True, blank=True, upload_to="profile_pics", default="profile_pics/default.jpg")
+    firebase_token = models.TextField(null=True, blank=True)
+
     def __str__(self):
         return self.user.username
