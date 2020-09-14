@@ -1,4 +1,4 @@
-# How to set up your environment
+# How to set up your environment 
 
 1. Clone the repository.
 2. Make a file called .env in the "src" folder, using .env.debug as a template. Do not change anything except allowed hosts and secret key.
