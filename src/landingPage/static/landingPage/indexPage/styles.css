@@ -4,6 +4,10 @@
     font-family: Roboto;
 }
 
+.alert{
+   border-radius: 0 !important;
+}
+
 html{
     cursor: url('./assets/Asset.png'), auto;
 }
