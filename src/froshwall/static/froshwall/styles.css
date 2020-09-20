@@ -59,3 +59,34 @@ main{
     line-height: 30px;
     font-size: 3rem;
 }
+
+.floating-button{
+    z-index: 10;
+    border-radius: 100%;
+    position: absolute;
+    top: 88%;
+    left: 90%;
+    background: rgb(29, 29, 29);
+    color: white;
+    font-size: 2rem;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.floating-button:hover{
+    transform: scale(1.1);
+}
+
+@media(max-width: 992px){
+    .floating-button{
+        top: 88%;
+        left: 79%;
+        /* display: none; */
+    }
+}
