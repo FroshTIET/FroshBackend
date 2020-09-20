@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
+
 from django.conf import settings
 from django.conf.urls.static import static
 from landingPage.views import homeView
@@ -14,6 +15,7 @@ urlpatterns = [
     path("api-token-auth/", views.obtain_auth_token),
     path("wall-of-frosh/", include("froshwall.urls"))
 ]
+
 
 
 if settings.DEBUG:

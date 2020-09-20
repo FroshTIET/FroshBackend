@@ -16,6 +16,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.sites",
+    "captcha",
     "user_management.apps.UserManagementConfig",
     "landingPage.apps.LandingpageConfig",
     "froshwall.apps.FroshwallConfig",
@@ -23,6 +24,7 @@ INSTALLED_APPS = [
     "rest_framework.authtoken",
     "notifications.apps.NotificationsConfig",
     "django.contrib.auth",
+    
 ]
 
 MIDDLEWARE = [
@@ -119,3 +121,5 @@ FCM_KEY = config("FCM_KEY")
 LOGIN_URL = "/login/"
 LOGIN_REDIRECT_URL = "/"
 
+RECAPTCHA_PUBLIC_KEY = config('RECAPTCHA_PUBLIC_KEY', '-------------')
+RECAPTCHA_PRIVATE_KEY = config('RECAPTCHA_PRIVATE_KEY', '-------------')

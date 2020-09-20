@@ -5,12 +5,10 @@ from froshwall.models import Tweet
 
 @admin.register(Tweet)
 class TweetAdmin(admin.ModelAdmin):
-    def name(self, object):
-        return object.user.first_name
 
     list_display = [
         "content",
-        "name",
+        "username",
         "timestamp",
         "approved"
     ]
