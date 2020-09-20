@@ -12,6 +12,7 @@ urlpatterns = [
     path("api-auth/", include("rest_framework.urls")),
     path("app/", include("notifications.urls")),
     path("api-token-auth/", views.obtain_auth_token),
+    path("wall-of-frosh/", include("froshwall.urls"))
 ]
 
 

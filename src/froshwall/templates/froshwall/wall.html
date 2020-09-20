@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wall of frosh</title>
+</head>
+<body>
+    {% for i in messages %}
+    
+    <p>{{ i.content }}</p>
+    <p>{{ i.user }}</p>
+    <p>{{ i.timestamp }}</p>
+    
+    {% endfor %}
+</body>
+</html>

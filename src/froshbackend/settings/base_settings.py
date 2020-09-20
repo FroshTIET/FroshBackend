@@ -18,6 +18,7 @@ INSTALLED_APPS = [
     "django.contrib.sites",
     "user_management.apps.UserManagementConfig",
     "landingPage.apps.LandingpageConfig",
+    "froshwall.apps.FroshwallConfig",
     "rest_framework",
     "rest_framework.authtoken",
     "notifications.apps.NotificationsConfig",
