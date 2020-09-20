@@ -1,0 +1,61 @@
+html, body{
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.main-title{
+    font-family: 'Vintage';
+    font-size: 5rem;
+    letter-spacing: 10px;
+    z-index: 10;
+    color: white;
+}
+
+.bg{
+    z-index: -1;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background: url('./assets/cleaned.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@font-face{
+    src: url('./assets/Otto.ttf');
+    font-family: 'Otto';
+}
+@font-face{
+    src: url('./assets/vintage\ letterpress\ blocks.ttf');
+    font-family: 'Vintage';
+}
+
+main{
+    
+    height: 100vh;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.blockquote{
+    background: url('./assets/paper.jpeg');
+    box-shadow: 0 0 9px 2px rgba(0, 0, 0, 0.13);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.blockquote p{
+    font-family: 'Otto';
+    line-height: 30px;
+    font-size: 3rem;
+}
