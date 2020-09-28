@@ -8,14 +8,14 @@
     <title>FROSH</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'landingPage/indexPage/styles.css' %}">
+    <link rel="stylesheet" href="landingPage/indexPage/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
         integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
         crossorigin="anonymous" />
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;900&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel='icon' href="{% static 'landingPage/indexPage/assets/favicon.png' %}" type='image/x-icon'>
+    <link rel='icon' href="landingPage/indexPage/assets/favicon.png" type='image/x-icon'>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 
@@ -28,7 +28,7 @@
     <section class="landing">
         <div id="particles-js"></div>
         <video id="videoBG" autoplay muted loop>
-            <source src="{% static 'landingPage/indexPage/assets/background.webm' %}" type="video/mp4">
+            <source src="landingPage/indexPage/assets/background.webm" type="video/mp4">
         </video>
         <div class="alert alert-primary text-center" role="alert">
             <div class="d-block  caption" data-aos="fade-down" data-aos-delay="300">The Society Fair is live !! <a href="/society-fair">Visit now.</a> 
@@ -38,7 +38,7 @@
             <nav class="navbar navbar-expand-lg navbar-dark">
 
                 <a class="navbar-brand" href="#"><img
-                        src="{% static 'landingPage/indexPage/assets/FROSH2020_logo_white.png' %}" alt=""></a>
+                        src="landingPage/indexPage/assets/FROSH2020_logo_white.png" alt=""></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -124,8 +124,8 @@
                     Journey freshers. The journey to explore and experience the new you. To Discover your Inner Self
                     through us.</p>
                 <p data-aos="fade-up" class="pt-3 about-content text-center">Messages from <a
-                        href="{% url 'director-page' %}"><span class="theme"><strong>Director</strong></span></a> and <a
-                        href="{% url 'dosa-page' %}"><span class="theme"><strong>Dean</strong></span></a></p>
+                        href="{% url 'director-page"><span class="theme"><strong>Director</strong></span></a> and <a
+                        href="{% url 'dosa-page"><span class="theme"><strong>Dean</strong></span></a></p>
             </div>
         </div>
     </section>
@@ -338,8 +338,8 @@
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
 
-    <script src="{% static 'landingPage/indexPage/assets/js/particles.js' %}"></script>
-    <script src="{% static 'landingPage/indexPage/app.js' %}"></script>
+    <script src="landingPage/indexPage/assets/js/particles.js"></script>
+    <script src="landingPage/indexPage/app.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
